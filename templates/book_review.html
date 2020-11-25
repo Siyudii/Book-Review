@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <!-- {% for message in messages %} -->
+            <p>{{ message }}</p>
+            <!-- {% endfor %} -->
+        {% endif %}
+    {% endwith %}
+<head>
+	
+</head>
+<h1>welcome</h1>
+<body>
+
+
+
+	<table>
+		    <thead>
+    <tr>
+        <th>REVIEW</th>
+        <th>RATING</th>
+    </tr>
+    </thead>
+
+        <tbody>
+        {% for row in value %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+	</table>
+
+</body>
+</html>

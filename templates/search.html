@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style >
+    	body{
+    		
+    		
+
+    	}
+    	table{
+    		height: 100%;
+    		width: 100%;
+    		text-align: center;
+    		border: solid yellowgreen;
+    		background-color: #faddd6;
+    		font-size: x-large;
+    		font-style: italic;
+    		color: #684c45;
+    	}
+    </style>
+<body>
+
+
+	<table>
+		{% for dict_item in content %}
+			<tr>
+			
+				{% for key, val in dict_item.items() %}
+
+					<!-- <td>val</td> -->
+
+					<!-- {% if 'best_book' in key %} -->
+
+						<td><img src={{ val['image_url'] }}  alt="no image" ></img></td>
+						
+						<td>{{ val['title'] }}</td>
+						<td name="book_id"><a href="/show_review/{{ val['id']['#text'] }} ">{{ val['id']['#text'] }}</a></td>
+
+						<td>{{ val['author']['name'] }}</td>
+						<td><form action="/review/{{ val['id']['#text'] }}"><button>Add review</button></form></td>
+					<!-- {% endif %} -->
+
+				{% endfor %}
+
+
+			</tr>
+		 {% endfor %}
+	</table>
+
+</body>
+</html>

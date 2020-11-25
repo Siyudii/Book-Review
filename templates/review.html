@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- enter your review for book id {{ id }} -->
+	<style >
+    	body{
+    		background-image: url(/static/images/reve.jpg);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		background-position: center;
+    		/*height: 100%;*/
+    	}
+    </style>
+
+
+	<title>
+		
+		
+	</title>
+</head>
+<h1><font color="white">ENTER YOUR REVIEW HERE !</font></h1>
+<body>
+
+	<form action="/review_stored" method="POST">
+		<table style="margin-left: auto;margin-right: 45%;margin-top: 25%;border: 1px solid black;padding: 8px;">
+
+		<tr>
+			<td><font color="white">BOOK ID:</td>
+			 <td > <input type="text" name="book_id" value="{{ book_id }}" readonly style="width: 430px; color: white"></td>
+		</tr>
+
+		<tr>
+			<td><font color="white">REVIEW:</td> 
+			<td ><input type="text" name="review" placeholder="Type your review here." style="width: 430px"></td>
+		</tr>
+
+		<tr>
+			<td><font color="white">RATING:</td>
+			<td ><input type="text" name="rating" placeholder="Rate the book out of 5." style="width: 430px"></td>
+		</tr>
+			<tr><td><button type="submit">submit review</button></td></tr>
+
+		</table>
+		</form>
+
+</body>
+</html>

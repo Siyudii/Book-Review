@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<!-- {% for message in messages %} -->
+			<p>{{ message }}</p>
+			<!-- {% endfor %} -->
+		{% endif %}
+	{% endwith %}
+
+	<form type="SUBMIT" action="/registeration_complete" method="POST">
+		<table>
+			<tr>
+				<td>USERNAME : </td>
+				<td> <input type="text" name="username" placeholder="Enter username" required/></td>
+			</tr>
+
+			<tr>
+				<td>EMAIL-ID : </td>
+				<td> <input type="text" name="email" placeholder="Enter your email address" required/></td>
+			</tr>
+
+			<tr>
+				<td>PASSWORD : </td>
+				<td> <input type="password" name="password" placeholder="Enter your password" required/></td>
+			</tr>
+
+			<tr>
+				<td>CONFIRM PASSWORD : </td>
+				<td> <input type="password" name="confirm_password" placeholder="Enter the password again" required/></td>
+			</tr>
+			<tr><td> <button type="SUBMIT">SUBMIT</button></td></tr>
+
+
+		</table>
+	</form>
+
+</body>
+</html>
